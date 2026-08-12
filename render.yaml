@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: shop7new
+    env: docker
+    plan: free
+    dockerfilePath: Dockerfile
+    autoDeploy: true
+    buildCommand: ""
+    startCommand: ""
