@@ -6,7 +6,8 @@ COPY . /var/www/html/
 # Ensure permissions
 RUN chown -R www-data:www-data /var/www/html
 
-# Enable rewrite module (commonly used by PHP apps)
+# Enable .htaccess and rewrite module for PHP routing
+RUN sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf
 RUN a2enmod rewrite || true
 
 EXPOSE 80
